@@ -20,7 +20,8 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
 
 
@@ -34,6 +35,7 @@
             android:padding="2dp"
             android:elevation="16dp"
             android:text="@string/skip"
+            android:textStyle="bold"
             android:textSize="18sp" />
 
 
@@ -45,7 +47,8 @@
             app:tabIndicatorHeight="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/viewPager" />
+            app:layout_constraintBottom_toTopOf="@id/next_btn"
+           />
 
         <Button
             android:id="@+id/next_btn"
@@ -56,9 +59,11 @@
             android:text="@string/next"
             android:textAllCaps="false"
             android:layout_margin="24dp"
+            android:foregroundTint="@color/purple_500"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:drawableEnd="@drawable/ic_next"
-            android:drawableTint="@color/white"
-            android:textColor="@color/white" />
+            android:drawableTint="@color/purple_500"
+            android:textColor="@color/purple_500" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

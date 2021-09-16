@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Brokerage</string>
+    <string name="skip">تخطي</string>
+    <string name="next">التالي</string>
+    <string name="done">انتهاء</string>
+    <string name="lorem_ipsum_desc">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر</string>
+    <string name="lorem_ipsum_title">لوريم إيبسوم</string>
+</resources>
