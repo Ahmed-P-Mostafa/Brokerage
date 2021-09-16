@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.polotika.brokerage.pojo.AppConstants.PREFS_APP_LOCALE_KEY
 import com.polotika.brokerage.pojo.AppConstants.PREFS_BOARDED_KEY
 import com.polotika.brokerage.pojo.AppConstants.PREFS_DATA_STORE_NAME
 import com.polotika.brokerage.pojo.AppConstants.PREFS_USER_LOGIN_KEY
@@ -24,6 +25,17 @@ class PreferencesUtils @Inject constructor(@ApplicationContext private val conte
 
     private val isAppOnBoardedKey = booleanPreferencesKey(PREFS_BOARDED_KEY)
     private val isUserLoginKey = booleanPreferencesKey(PREFS_USER_LOGIN_KEY)
+    private val appDefaultLocaleKey = stringPreferencesKey(PREFS_APP_LOCALE_KEY)
+
+    val appDefaultLocale :Flow<String> = context.dataStore.data.map { prefs->
+        prefs[appDefaultLocaleKey]?:"en"
+    }
+
+    suspend fun setAppDefaultLocale(locale:String){
+        context.dataStore.edit { settings->
+            settings[appDefaultLocaleKey] = locale
+        }
+    }
 
     val isAppOnboarded: Flow<Boolean> = context.dataStore.data.map { prefs ->
         prefs[isAppOnBoardedKey] ?: false

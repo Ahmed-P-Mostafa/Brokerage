@@ -17,6 +17,8 @@ import javax.inject.Inject
 class SplashViewModel @Inject constructor(private val prefs:PreferencesUtils) :BaseViewModel<BaseNavigator>() {
 
     val splashNavigationEvent = MutableLiveData<SplashNavigationEvent>()
+    val appDefaultLocale = MutableLiveData<String>()
+
 
     init {
         CoroutineScope(IO).launch {
@@ -31,7 +33,11 @@ class SplashViewModel @Inject constructor(private val prefs:PreferencesUtils) :B
                     splashNavigationEvent.postValue(SplashNavigationEvent.LoginEvent)
                 }
             }
+
+            appDefaultLocale.postValue(prefs.appDefaultLocale.first())
+
         }
+
     }
 
 }

@@ -1,6 +1,7 @@
 package com.polotika.brokerage.di
 
 import android.content.Context
+import com.polotika.brokerage.utils.PreferencesUtils
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,6 +19,8 @@ object AppModule {
     fun providesContext(context: Context):Context{
         return context
     }
+
+
 
 
 }

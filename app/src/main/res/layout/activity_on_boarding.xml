@@ -38,6 +38,19 @@
             android:textStyle="bold"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/language_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewPager"
+            android:layout_margin="12dp"
+            android:padding="2dp"
+            android:elevation="16dp"
+            android:text="@string/lang_label"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"

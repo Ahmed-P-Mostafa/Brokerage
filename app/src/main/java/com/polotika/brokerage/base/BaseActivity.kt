@@ -2,6 +2,7 @@ package com.polotika.brokerage.base
 
 import android.app.AlertDialog
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -12,6 +13,8 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 abstract class BaseActivity<DB:ViewDataBinding,VM:BaseViewModel<*>> :AppCompatActivity() {
 
@@ -83,5 +86,14 @@ abstract class BaseActivity<DB:ViewDataBinding,VM:BaseViewModel<*>> :AppCompatAc
             }
         })
 
+    }
+
+    fun setAppLocale(context: Context, language: String) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val config = context.resources.configuration
+        config.setLocale(locale)
+        context.createConfigurationContext(config)
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
     }
 }

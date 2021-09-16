@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import androidx.lifecycle.Observer
 import com.polotika.brokerage.MainActivity
 import com.polotika.brokerage.R
 import com.polotika.brokerage.base.BaseActivity
@@ -28,6 +29,11 @@ class SplashActivity : BaseActivity<ActivitySplashBinding,SplashViewModel>() {
                 launchActivity(mIntent)
             },3000)
         })
+
+        viewModel.appDefaultLocale.observe(this, Observer {
+            viewModel.setAppLocale(this,it)
+        })
+
 
     }
 

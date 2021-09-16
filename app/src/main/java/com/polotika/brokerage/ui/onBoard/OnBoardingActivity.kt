@@ -70,6 +70,16 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding,OnBoardViewMod
             }
         })
 
+        binding.languageBtn.setOnClickListener {
+            val lang = binding.languageBtn.text
+            if (lang=="English")
+                viewModel.setAppLocale(this,getString(R.string.en_lang_key))
+            else
+                viewModel.setAppLocale(this,getString(R.string.ar_lang_key))
+            recreate()
+
+        }
+
     }
 
     private fun finishOnBoarding(){

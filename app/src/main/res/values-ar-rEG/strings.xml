@@ -6,4 +6,5 @@
     <string name="done">انتهاء</string>
     <string name="lorem_ipsum_desc">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر</string>
     <string name="lorem_ipsum_title">لوريم إيبسوم</string>
+    <string name="lang_label">English</string>
 </resources>
