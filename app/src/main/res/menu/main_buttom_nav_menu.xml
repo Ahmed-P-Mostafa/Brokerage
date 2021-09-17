@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/ic_outline_home_24"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/renewalFragment"
+            android:icon="@drawable/ic_renewals"
+            android:title="@string/renewal" />
+
+        <item
+            android:id="@+id/servicesFragment"
+            android:icon="@drawable/ic_view"
+            android:title="@string/services" />
+
+        <item
+            android:id="@+id/claimsFragment"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/claims" />
+
+        <item
+            android:id="@+id/medicalFragment"
+            android:icon="@drawable/ic_language"
+            android:title="@string/medical" />
+
+    </group>
+
+
+</menu>

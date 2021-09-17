@@ -8,6 +8,26 @@
     <fragment
         android:id="@+id/servicesFragment"
         android:name="com.polotika.brokerage.ui.services.ServicesFragment"
-        android:label="fragment_services"
+        android:label="@string/services"
         tools:layout="@layout/fragment_services" />
+    <fragment
+        android:id="@+id/renewalFragment"
+        android:name="com.polotika.brokerage.RenewalFragment"
+        android:label="@string/renewal"
+        tools:layout="@layout/fragment_renewal" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.polotika.brokerage.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/claimsFragment"
+        android:name="com.polotika.brokerage.ClaimsFragment"
+        android:label="@string/claims"
+        tools:layout="@layout/fragment_claims" />
+    <fragment
+        android:id="@+id/medicalFragment"
+        android:name="com.polotika.brokerage.MedicalFragment"
+        android:label="@string/medical"
+        tools:layout="@layout/fragment_medical" />
 </navigation>

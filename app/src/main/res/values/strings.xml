@@ -50,5 +50,17 @@
     <string name="register_error">Please fulfill all fields!</string>
     <string name="terms_error">Please accept terms and conditions</string>
     <string name="mobile_error">Please add mobile number proprley</string>
+    <string name="home">Home</string>
+    <string name="renewal">Renewal</string>
+    <string name="claims">Claims</string>
+    <string name="medical">Medical</string>
+    <string name="services">Services</string>
+    <string name="user_name">User name</string>
+    <string name="view_profile">View profile</string>
+    <string name="about">About</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Logout</string>
+    <string name="drawer_open" translatable="false">Drawer open</string>
+    <string name="drawer_close" translatable="false">Drawer close</string>
 
 </resources>
