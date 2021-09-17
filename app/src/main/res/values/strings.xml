@@ -34,5 +34,21 @@
     <string name="forgot_label1">Forgot your account password!</string>
     <string name="forgot_label2">No problem enter your email address to verify your account</string>
     <string name="forgot_label3">we will email instructions on how to reset your password.</string>
+    <string name="get_started_now">Get started now!</string>
+    <string name="get_started2">Create an account to get started.</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="password_condition">Password should contain at least one character and at least one number</string>
+    <string name="terms_label">I have read and accept </string>
+    <string name="terms_conditions"><![CDATA[The terms & Conditions]]></string>
+    <string name="signup">Sign up</string>
+    <string name="first_name_error">Please enter first name</string>
+    <string name="last_name_error">Please enter lsat name</string>
+    <string name="email_error">Please enter email correctly</string>
+    <string name="password_error">Please enter password correctly</string>
+    <string name="register_error">Please fulfill all fields!</string>
+    <string name="terms_error">Please accept terms and conditions</string>
+    <string name="mobile_error">Please add mobile number proprley</string>
 
 </resources>
