@@ -38,7 +38,7 @@ class PreferencesUtils @Inject constructor(@ApplicationContext private val conte
     }
 
     val isAppOnboarded: Flow<Boolean> = context.dataStore.data.map { prefs ->
-        prefs[isAppOnBoardedKey] ?: false
+        prefs[isAppOnBoardedKey] ?: true
     }
 
     val isUserLogin:Flow<Boolean> = context.dataStore.data.map { prefs->
@@ -47,7 +47,7 @@ class PreferencesUtils @Inject constructor(@ApplicationContext private val conte
 
     suspend fun completeOnBoarding() {
         context.dataStore.edit { settings ->
-            settings[isAppOnBoardedKey] = true
+            settings[isAppOnBoardedKey] = false
         }
     }
 

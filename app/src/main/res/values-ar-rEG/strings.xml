@@ -7,4 +7,20 @@
     <string name="lorem_ipsum_desc">لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر</string>
     <string name="lorem_ipsum_title">لوريم إيبسوم</string>
     <string name="lang_label">English</string>
+    <string name="lang_dialog_confirm">Ok</string>
+    <string name="lang_dialog_cancel">Cancel</string>
+    <string name="lang_dialog_message">Do you want change the app language to English ?</string>
+    <string name="welcome_back">مرحبا يعودتك !</string>
+    <string name="welcome_back2">قم بتسجيل الدخول لحسابك الحالي.</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="forgot_label">هل فقدت كلمة المرور ؟</string>
+    <string name="reset_password">اعادة تعيين كلمة المرور</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="login_with">تسجيل الدخول ب</string>
+    <string name="new_account_label">ليس لديك حساب بعد ؟</string>
+    <string name="create_account">انشاء حساب</string>
+    <string name="login_fragment">تسجيل دخول</string>
+    <string name="fragment_register">مستخدم جديد</string>
+    <string name="fragment_forget_password">استرداد كلمة المرور</string>
 </resources>

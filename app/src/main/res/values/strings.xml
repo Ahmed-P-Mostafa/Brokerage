@@ -6,12 +6,33 @@
     <string name="lorem_ipsum_title">Lorem Ipsum</string>
     <string name="lorem_ipsum_desc">"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "</string>
     <string name="lang_label">العربيه</string>
+    <string name="lang_eng_label" translatable="false">English</string>
 
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="welcome_back2">Login to your existing account.</string>
 
 
     <!-- non translatable keys -->
 
     <string name="ar_lang_key" translatable="false">ar</string>
     <string name="en_lang_key" translatable="false">en</string>
+    <string name="lang_dialog_message">هل تريد تغيير لغة التطبيق الي العربيه ؟</string>
+    <string name="lang_dialog_confirm">موافق</string>
+    <string name="lang_dialog_cancel">الغاء</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_label">Did you forgot your password ? </string>
+    <string name="reset_password"> Reset password</string>
+    <string name="login">Login</string>
+    <string name="login_with">Login with</string>
+    <string name="new_account_label">Don\'t have an account yet ? </string>
+    <string name="create_account">Create account</string>
+    <string name="login_fragment">Login</string>
+    <string name="fragment_register">Register</string>
+    <string name="fragment_forget_password">Forget Password</string>
+    <string name="forgot_label1">Forgot your account password!</string>
+    <string name="forgot_label2">No problem enter your email address to verify your account</string>
+    <string name="forgot_label3">we will email instructions on how to reset your password.</string>
 
 </resources>

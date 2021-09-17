@@ -21,6 +21,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:lottie_rawRes="@raw/insurance"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

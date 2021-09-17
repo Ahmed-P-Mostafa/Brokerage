@@ -4,9 +4,12 @@ import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -26,6 +29,8 @@ abstract class BaseActivity<DB:ViewDataBinding,VM:BaseViewModel<*>> :AppCompatAc
         super.onCreate(savedInstanceState)
         binding  = DataBindingUtil.setContentView(this,initializeLayout())
         viewModel = ViewModelProvider(this).get(initializeViewModel())
+
+
 
     }
 
@@ -85,15 +90,11 @@ abstract class BaseActivity<DB:ViewDataBinding,VM:BaseViewModel<*>> :AppCompatAc
                 false -> hideLoader()
             }
         })
-
     }
+    fun isInternetAvailable():Boolean{
 
-    fun setAppLocale(context: Context, language: String) {
-        val locale = Locale(language)
-        Locale.setDefault(locale)
-        val config = context.resources.configuration
-        config.setLocale(locale)
-        context.createConfigurationContext(config)
-        context.resources.updateConfiguration(config, context.resources.displayMetrics)
+        val cm = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+        return activeNetwork?.isConnectedOrConnecting == true
     }
 }
