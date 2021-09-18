@@ -1,13 +1,11 @@
 package com.polotika.brokerage.di
 
 import android.content.Context
-import com.polotika.brokerage.pojo.repository.login.LoginRepository
-import com.polotika.brokerage.pojo.repository.login.LoginRepositoryImpl
-import com.polotika.brokerage.pojo.repository.login.LoginUseCase
-import com.polotika.brokerage.pojo.repository.login.RegisterUseCase
+import com.polotika.brokerage.pojo.repository.login.*
 import com.polotika.brokerage.pojo.repository.main.MainRepository
 import com.polotika.brokerage.pojo.repository.main.MainRepositoryImpl
 import com.polotika.brokerage.pojo.repository.main.ServicesListUseCase
+import com.polotika.brokerage.webService.WebService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,8 +25,8 @@ class RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideLoginRepository():LoginRepository{
-        return LoginRepositoryImpl()
+    fun provideLoginRepository(webService: WebService):LoginRepository{
+        return LoginRepositoryImpl(webService)
     }
 
     @Singleton
@@ -47,6 +45,12 @@ class RepositoryModule {
     @Provides
     fun provideServicesListUseCase(mainRepository: MainRepository):ServicesListUseCase{
         return ServicesListUseCase(mainRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideForgetUseCase(loginRepository: LoginRepository): ForgetUseCase {
+        return ForgetUseCase(loginRepository)
     }
 
 

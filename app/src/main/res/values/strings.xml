@@ -79,5 +79,7 @@
     <string name="service9">Inland insurance</string>
     <string name="service10">Life insurance individual</string>
     <string name="service11">Personal Accident</string>
+    <string name="email_sent">Reset email sent</string>
+    <string name="email_error_occured">Some error occurred</string>
 
 </resources>
