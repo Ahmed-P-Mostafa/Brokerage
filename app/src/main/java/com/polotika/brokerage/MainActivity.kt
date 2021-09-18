@@ -2,6 +2,7 @@ package com.polotika.brokerage
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -66,10 +67,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun about(item: MenuItem) {
+        binding.drawerLayout.closeDrawer(Gravity.LEFT)
         Toast.makeText(this, getString(R.string.about), Toast.LENGTH_SHORT).show()
     }
 
     fun settings(item: MenuItem) {
+        binding.drawerLayout.closeDrawer(Gravity.LEFT)
+
         Toast.makeText(this, getString(R.string.setting), Toast.LENGTH_SHORT).show()
 
     }
