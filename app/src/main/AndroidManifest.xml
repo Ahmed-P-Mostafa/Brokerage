@@ -3,6 +3,7 @@
     package="com.polotika.brokerage">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".base.MyApplication"
         android:allowBackup="true"
@@ -11,19 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Brokerage">
-        <activity
-            android:name=".ui.splash.SplashActivity">
-
-        </activity>
-        <activity android:name=".ui.onBoard.OnBoardingActivity">
-
-        </activity>
-        <activity android:name=".LoginActivity">
-
-
-        </activity>
-        <activity android:name=".MainActivity"
-            >
+        <activity android:name=".ui.noInternet.NoInternetActivity"/>
+        <activity android:name=".ui.splash.SplashActivity"/>
+        <activity android:name=".ui.onBoard.OnBoardingActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

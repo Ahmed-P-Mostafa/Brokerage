@@ -36,7 +36,7 @@ class LoginViewModel @Inject constructor(private val prefs: PreferencesUtils,pri
     }
 
     fun login(){
-            viewModelScope.async {
+            viewModelScope.launch {
                 if (isDataValid()){
                     when(loginUseCase.execute(email.value,password.value)){
                         is Event.Success->{

@@ -62,5 +62,22 @@
     <string name="logout">Logout</string>
     <string name="drawer_open" translatable="false">Drawer open</string>
     <string name="drawer_close" translatable="false">Drawer close</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="press_to_refresh">Press to refresh</string>
+    <string name="login_with_fb">Login with Facebook</string>
+    <string name="login_with_go">Login with Google</string>
+    <string name="fulfil_fields">Please fulfill all fields!</string>
+    <string name="soon">Soon</string>
+    <string name="service1">Car insurance</string>
+    <string name="service2">Life insurance</string>
+    <string name="service3">Travel insurance</string>
+    <string name="service4">Home insurance</string>
+    <string name="service5">Medical insurance</string>
+    <string name="service6">Critical Illness Insurance</string>
+    <string name="service7">Yacht insurance</string>
+    <string name="service8">Marine insurance</string>
+    <string name="service9">Inland insurance</string>
+    <string name="service10">Life insurance individual</string>
+    <string name="service11">Personal Accident</string>
 
 </resources>

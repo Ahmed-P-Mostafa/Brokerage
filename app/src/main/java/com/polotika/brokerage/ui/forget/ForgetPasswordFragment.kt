@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.polotika.brokerage.R
 import com.polotika.brokerage.base.BaseFragment
 import com.polotika.brokerage.base.BaseNavigator
@@ -19,6 +20,16 @@ class ForgetPasswordFragment : BaseFragment<FragmentForgetPasswordBinding,OnBoar
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (!isInternetAvailable()) {
+            Snackbar.make(
+                requireContext(),
+                binding.root,
+                getString(R.string.no_internet_connection),
+                Snackbar.LENGTH_LONG
+            ).show()
+            findNavController().navigateUp()
+        }
 
         binding.resetPasswordBtn.setOnClickListener {
             Toast.makeText(requireContext(), "Reset email sent", Toast.LENGTH_SHORT).show()

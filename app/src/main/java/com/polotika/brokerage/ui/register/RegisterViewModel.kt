@@ -8,8 +8,7 @@ import com.polotika.brokerage.base.BaseNavigator
 import com.polotika.brokerage.base.BaseViewModel
 import com.polotika.brokerage.pojo.models.Event
 import com.polotika.brokerage.pojo.models.User
-import com.polotika.brokerage.pojo.repository.register.RegisterUseCase
-import com.polotika.brokerage.ui.login.LoginNavigationState
+import com.polotika.brokerage.pojo.repository.login.RegisterUseCase
 import com.polotika.brokerage.utils.PreferencesUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

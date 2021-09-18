@@ -11,6 +11,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.polotika.brokerage.MainActivity
 import com.polotika.brokerage.R
 import com.polotika.brokerage.base.BaseFragment
@@ -19,14 +21,11 @@ import com.polotika.brokerage.pojo.models.Event
 import kotlinx.coroutines.flow.collect
 
 class LoginFragment : BaseFragment<FragmentLoginBinding,LoginViewModel>() {
-    private val TAG = "LoginFragment"
     private val STATE_KEY = "STATE"
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d(TAG, "onViewCreated: ")
-        Log.d(TAG, "onViewCreated: $savedInstanceState")
         if (savedInstanceState==null){
             binding.vm = viewModel
             observers()
@@ -40,10 +39,38 @@ class LoginFragment : BaseFragment<FragmentLoginBinding,LoginViewModel>() {
         }
 
         binding.loginFb.setOnClickListener {
-            Toast.makeText(requireContext(), "Login with Facebook", Toast.LENGTH_SHORT).show()
+            if (!isInternetAvailable()) {
+                Snackbar.make(
+                    requireContext(),
+                    binding.root,
+                    getString(R.string.no_internet_connection),
+                    Snackbar.LENGTH_LONG
+                ).show()
+
+            }else Toast.makeText(requireContext(), getString(R.string.login_with_fb), Toast.LENGTH_SHORT).show()
+        }
+
+        binding.loginBtn.setOnClickListener {
+            if (!isInternetAvailable()) {
+                Snackbar.make(
+                    requireContext(),
+                    binding.root,
+                    getString(R.string.no_internet_connection),
+                    Snackbar.LENGTH_LONG
+                ).show()
+
+            }else viewModel.login()
         }
         binding.loginGo.setOnClickListener {
-            Toast.makeText(requireContext(), "Login with Google", Toast.LENGTH_SHORT).show()
+            if (!isInternetAvailable()) {
+                Snackbar.make(
+                    requireContext(),
+                    binding.root,
+                    getString(R.string.no_internet_connection),
+                    Snackbar.LENGTH_LONG
+                ).show()
+
+            }else Toast.makeText(requireContext(), getString(R.string.login_with_go), Toast.LENGTH_SHORT).show()
         }
         binding.languageBtn.setOnClickListener {
             showDialog(
@@ -75,7 +102,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding,LoginViewModel>() {
 
         lifecycleScope.launchWhenCreated {
             viewModel.emailCheck.collect {
-                Log.d(TAG, "onViewCreated:email check $it")
                 when(it){
                     true->{ binding.tilEmail.endIconDrawable?.setTint(resources.getColor(R.color.main_blue))}
                     false->{binding.tilEmail.endIconDrawable?.setTint(resources.getColor(R.color.grey))}
@@ -84,7 +110,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding,LoginViewModel>() {
         }
         lifecycleScope.launchWhenCreated {
             viewModel.passwordCheck.collect {
-                Log.d(TAG, "onViewCreated:password check $it")
 
                 when(it){
                     true->{ binding.tilPassword.endIconDrawable?.setTint(resources.getColor(R.color.main_blue))}
@@ -100,7 +125,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding,LoginViewModel>() {
                     finishLogin()
                 }
                 is LoginNavigationState.LoginFailed->{
-                    showMessage("Please fulfill all fields!")
+                    showMessage(getString(R.string.fulfil_fields))
                 }
             }
         })

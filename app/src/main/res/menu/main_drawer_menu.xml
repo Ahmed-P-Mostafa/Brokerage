@@ -35,12 +35,14 @@
         <item
             android:id="@+id/aboutFragment"
             android:icon="@drawable/ic_info"
-            android:title="@string/about" />
+            android:title="@string/about"
+            android:onClick="about"/>
 
         <item
             android:id="@+id/settingsFragment"
             android:icon="@drawable/ic_settings"
-            android:title="@string/setting" />
+            android:title="@string/setting"
+            android:onClick="settings"/>
 
         <item
             android:id="@+id/logout"
