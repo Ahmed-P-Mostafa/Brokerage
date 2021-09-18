@@ -10,7 +10,8 @@ import com.polotika.brokerage.base.BaseFragment
 import com.polotika.brokerage.databinding.FragmentForgetPasswordBinding
 
 
-class ForgetPasswordFragment : BaseFragment<FragmentForgetPasswordBinding,ForgetPasswordViewModel>() {
+class ForgetPasswordFragment :
+    BaseFragment<FragmentForgetPasswordBinding, ForgetPasswordViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,15 +30,23 @@ class ForgetPasswordFragment : BaseFragment<FragmentForgetPasswordBinding,Forget
 
 
         binding.resetPasswordBtn.setOnClickListener {
-            if (!viewModel.email.value.isNullOrBlank()){
+            if (!viewModel.email.value.isNullOrBlank()) {
 
-                when(viewModel.sendRequest(viewModel.email.value?:"" )){
-                    true->{
-                        Toast.makeText(requireContext(), getString(R.string.email_sent), Toast.LENGTH_SHORT).show()
+                when (viewModel.sendRequest(viewModel.email.value ?: "")) {
+                    true -> {
+                        Toast.makeText(
+                            requireContext(),
+                            getString(R.string.email_sent),
+                            Toast.LENGTH_SHORT
+                        ).show()
                         findNavController().navigateUp()
                     }
-                    false->{
-                        Toast.makeText(requireContext(), getString(R.string.email_error_occured), Toast.LENGTH_SHORT).show()
+                    false -> {
+                        Toast.makeText(
+                            requireContext(),
+                            getString(R.string.email_error_occured),
+                            Toast.LENGTH_SHORT
+                        ).show()
                         findNavController().navigateUp()
                     }
                 }
@@ -45,10 +54,9 @@ class ForgetPasswordFragment : BaseFragment<FragmentForgetPasswordBinding,Forget
         }
 
 
-
     }
 
     override fun initializeLayout() = R.layout.fragment_forget_password
 
-    override fun initializeViewModel()  =  ForgetPasswordViewModel::class.java
+    override fun initializeViewModel() = ForgetPasswordViewModel::class.java
 }

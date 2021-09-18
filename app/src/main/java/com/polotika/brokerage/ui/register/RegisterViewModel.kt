@@ -22,6 +22,7 @@ class RegisterViewModel @Inject constructor(
 ) : BaseViewModel<BaseNavigator>() {
 
     private val TAG = "RegisterViewModel"
+
     //^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$
     private val PASSWORD_PETTERN = "^(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$"
 
@@ -68,16 +69,18 @@ class RegisterViewModel @Inject constructor(
         return !(firstName.value.isNullOrBlank() || lastName.value.isNullOrBlank() ||
                 email.value.isNullOrBlank() || mobileNumber.value.isNullOrBlank() ||
                 password.value.isNullOrBlank() || isChecked.value == false ||
-                !Pattern.compile(PASSWORD_PETTERN).matcher(password.value.toString()).matches()||
+                !Pattern.compile(PASSWORD_PETTERN).matcher(password.value.toString()).matches() ||
                 !Patterns.EMAIL_ADDRESS.matcher(email.value.toString()).matches())
     }
 
     private fun showViewErrors() {
         firstNameError.value = firstName.value.isNullOrEmpty()
         lastNameError.value = lastName.value.isNullOrEmpty()
-        emailError.value = email.value.isNullOrEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email.value.toString()).matches()
-        mobileError.value = mobileNumber.value?.length?:0 < 11
-        passwordError.value = password.value?.length?:0 < 8||
+        emailError.value =
+            email.value.isNullOrEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email.value.toString())
+                .matches()
+        mobileError.value = mobileNumber.value?.length ?: 0 < 11
+        passwordError.value = password.value?.length ?: 0 < 8 ||
                 !Pattern.compile(PASSWORD_PETTERN).matcher(password.value.toString()).matches()
 
     }

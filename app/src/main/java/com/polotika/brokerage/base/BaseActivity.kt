@@ -2,41 +2,33 @@ package com.polotika.brokerage.base
 
 import android.app.AlertDialog
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.DialogInterface
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
-abstract class BaseActivity<DB:ViewDataBinding,VM:BaseViewModel<*>> :AppCompatActivity() {
+abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel<*>> : AppCompatActivity() {
 
     lateinit var viewModel: VM
-    lateinit var binding :DB
-    private var loader: ProgressDialog?=null
+    lateinit var binding: DB
+    private var loader: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding  = DataBindingUtil.setContentView(this,initializeLayout())
+        binding = DataBindingUtil.setContentView(this, initializeLayout())
         viewModel = ViewModelProvider(this).get(initializeViewModel())
-
 
 
     }
 
-    abstract fun initializeLayout():Int
+    abstract fun initializeLayout(): Int
 
-    abstract fun initializeViewModel():Class<VM>
+    abstract fun initializeViewModel(): Class<VM>
 
 
     fun showMessage(message: String) {
@@ -51,7 +43,7 @@ abstract class BaseActivity<DB:ViewDataBinding,VM:BaseViewModel<*>> :AppCompatAc
         message: String,
         posBtnText: String,
         posBtnClickListener: DialogInterface.OnClickListener,
-        negBtnText:String
+        negBtnText: String
     ) {
         AlertDialog.Builder(this)
             .setTitle(title)
@@ -91,7 +83,8 @@ abstract class BaseActivity<DB:ViewDataBinding,VM:BaseViewModel<*>> :AppCompatAc
             }
         })
     }
-    fun isInternetAvailable():Boolean{
+
+    fun isInternetAvailable(): Boolean {
 
         val cm = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = cm.activeNetworkInfo

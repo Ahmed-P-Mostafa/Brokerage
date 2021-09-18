@@ -14,7 +14,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.polotika.brokerage.databinding.ActivityMainBinding
 import com.polotika.brokerage.utils.PreferencesUtils
 import dagger.hilt.android.AndroidEntryPoint

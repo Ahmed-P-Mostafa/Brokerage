@@ -52,4 +52,23 @@
     <string name="about">عن بروكرج</string>
     <string name="setting">الاعدادات</string>
     <string name="logout">تسجيل خروج</string>
+    <string name="no_internet_connection">لا يوجد اتصال بالانترنت</string>
+    <string name="press_to_refresh">اضغط للتحديث</string>
+    <string name="login_with_fb">تسجيل دخول ب فيس بوك</string>
+    <string name="login_with_go">تسجيل دخول ب جوجل</string>
+    <string name="fulfil_fields">من فضلك املئ كل الحقول</string>
+    <string name="soon">قريباَ</string>
+    <string name="service1">تأمين السياره</string>
+    <string name="service2">تأمين الحياه</string>
+    <string name="service3">تأمين السفر</string>
+    <string name="service4">تأمين المنزل</string>
+    <string name="service5">التأمين الطبي</string>
+    <string name="service6">تأمين الأمراض الخطيره</string>
+    <string name="service7">تأمين اليخت</string>
+    <string name="service8">تأمين النقل البحري</string>
+    <string name="service9">تأمين النقل البري</string>
+    <string name="service10">تأمين الحياه للأفراد</string>
+    <string name="service11">تأمين الحوادث الشخصيه</string>
+    <string name="email_sent">تم ارسال بريد الكتروني بالاعدادات</string>
+    <string name="email_error_occured">حدث خطأ ما</string>
 </resources>

@@ -10,54 +10,53 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.noInternet.NoInternetActivity"
+        android:paddingHorizontal="24dp"
         android:paddingVertical="30dp"
-        android:paddingHorizontal="24dp">
+        tools:context=".ui.noInternet.NoInternetActivity">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/logo"
-            app:layout_constraintWidth_percent="0.3"
-            app:layout_constraintHeight_percent="0.2"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3" />
 
         <ImageView
             android:id="@+id/wifi_iv"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/ic_wifi"
-            app:tint="@color/grey"
             android:adjustViewBounds="true"
+            android:src="@drawable/ic_wifi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:tint="@color/grey" />
 
         <TextView
             android:id="@+id/no_connection_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/wifi_iv"
             android:text="@string/no_internet_connection"
-            android:textSize="28sp"/>
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wifi_iv" />
 
         <TextView
             android:id="@+id/refresh_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/no_connection_tv"
             android:text="@string/press_to_refresh"
-            android:textSize="24sp"/>
-
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/no_connection_tv" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

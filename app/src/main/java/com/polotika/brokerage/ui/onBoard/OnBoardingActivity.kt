@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
+import com.polotika.brokerage.LoginActivity
 import com.polotika.brokerage.R
 import com.polotika.brokerage.base.BaseActivity
 import com.polotika.brokerage.databinding.ActivityOnBoardingBinding
 import com.polotika.brokerage.pojo.adapters.BoardsViewPagerAdapter
 import com.polotika.brokerage.pojo.adapters.FadePageTransformer
 import com.polotika.brokerage.pojo.adapters.setViewPager
-import com.polotika.brokerage.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 

@@ -11,7 +11,6 @@ import com.polotika.brokerage.pojo.AppConstants.PREFS_APP_LOCALE_KEY
 import com.polotika.brokerage.pojo.AppConstants.PREFS_BOARDED_KEY
 import com.polotika.brokerage.pojo.AppConstants.PREFS_DATA_STORE_NAME
 import com.polotika.brokerage.pojo.AppConstants.PREFS_USER_LOGIN_KEY
-import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -27,12 +26,12 @@ class PreferencesUtils @Inject constructor(@ApplicationContext private val conte
     private val isUserLoginKey = booleanPreferencesKey(PREFS_USER_LOGIN_KEY)
     private val appDefaultLocaleKey = stringPreferencesKey(PREFS_APP_LOCALE_KEY)
 
-    val appDefaultLocale :Flow<String> = context.dataStore.data.map { prefs->
-        prefs[appDefaultLocaleKey]?:"en"
+    val appDefaultLocale: Flow<String> = context.dataStore.data.map { prefs ->
+        prefs[appDefaultLocaleKey] ?: "en"
     }
 
-    suspend fun setAppDefaultLocale(locale:String){
-        context.dataStore.edit { settings->
+    suspend fun setAppDefaultLocale(locale: String) {
+        context.dataStore.edit { settings ->
             settings[appDefaultLocaleKey] = locale
         }
     }
@@ -41,8 +40,8 @@ class PreferencesUtils @Inject constructor(@ApplicationContext private val conte
         prefs[isAppOnBoardedKey] ?: true
     }
 
-    val isUserLogin:Flow<Boolean> = context.dataStore.data.map { prefs->
-        prefs[isUserLoginKey]?:false
+    val isUserLogin: Flow<Boolean> = context.dataStore.data.map { prefs ->
+        prefs[isUserLoginKey] ?: false
     }
 
     suspend fun completeOnBoarding() {
@@ -51,14 +50,14 @@ class PreferencesUtils @Inject constructor(@ApplicationContext private val conte
         }
     }
 
-    suspend fun userLogin(){
-        context.dataStore.edit { settings->
+    suspend fun userLogin() {
+        context.dataStore.edit { settings ->
             settings[isUserLoginKey] = true
         }
     }
 
-    suspend fun userLogout(){
-        context.dataStore.edit { settings->
+    suspend fun userLogout() {
+        context.dataStore.edit { settings ->
             settings[isUserLoginKey] = false
         }
     }

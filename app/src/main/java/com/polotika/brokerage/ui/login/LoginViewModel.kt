@@ -14,52 +14,57 @@ import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val prefs: PreferencesUtils,private val loginUseCase: LoginUseCase) :BaseViewModel<BaseNavigator>() {
+class LoginViewModel @Inject constructor(
+    private val prefs: PreferencesUtils,
+    private val loginUseCase: LoginUseCase
+) : BaseViewModel<BaseNavigator>() {
 
     private val TAG = "LoginViewModel"
     private val email = MutableStateFlow<String>("")
     private val password = MutableStateFlow<String>("")
     val navigationEvent = MutableLiveData<LoginNavigationState>()
 
-    fun setEmail(email:String){
+    fun setEmail(email: String) {
         this.email.value = email
     }
-    fun setPassword(value:String){
+
+    fun setPassword(value: String) {
         password.value = value
     }
-    val emailCheck :Flow<Boolean> = combine(email,password) { email, _ ->
+
+    val emailCheck: Flow<Boolean> = combine(email, password) { email, _ ->
         return@combine Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    val passwordCheck : Flow<Boolean> = combine(email,password) { _, password ->
+    val passwordCheck: Flow<Boolean> = combine(email, password) { _, password ->
         return@combine password.length >= 8
     }
 
-    fun login(){
-            viewModelScope.launch {
-                if (isDataValid()){
-                    when(loginUseCase.execute(email.value,password.value)){
-                        is Event.Success->{
-                            completeLogin()
-                        }
-                        is Event.Failed->{
-                            navigationEvent.value= LoginNavigationState.LoginFailed
-                        }
+    fun login() {
+        viewModelScope.launch {
+            if (isDataValid()) {
+                when (loginUseCase.execute(email.value, password.value)) {
+                    is Event.Success -> {
+                        completeLogin()
                     }
-                }else{
-                    navigationEvent.value = LoginNavigationState.LoginFailed
+                    is Event.Failed -> {
+                        navigationEvent.value = LoginNavigationState.LoginFailed
+                    }
                 }
+            } else {
+                navigationEvent.value = LoginNavigationState.LoginFailed
             }
+        }
     }
 
     private suspend fun isDataValid(): Boolean {
-        return emailCheck.first()&&passwordCheck.first()
+        return emailCheck.first() && passwordCheck.first()
     }
 
     private fun completeLogin() {
         navigationEvent.value = LoginNavigationState.LoginSucceed
-       viewModelScope.launch {
-           prefs.userLogin()
-       }
+        viewModelScope.launch {
+            prefs.userLogin()
+        }
     }
 }

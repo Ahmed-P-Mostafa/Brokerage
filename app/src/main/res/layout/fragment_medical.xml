@@ -9,8 +9,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/medical"
         android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+        android:text="@string/medical"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
 </FrameLayout>

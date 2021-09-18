@@ -4,5 +4,5 @@ import com.polotika.brokerage.pojo.models.ServiceItem
 
 interface MainRepository {
 
-    fun getServicesList():List<ServiceItem>
+    fun getServicesList(): List<ServiceItem>
 }

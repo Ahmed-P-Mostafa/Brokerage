@@ -31,13 +31,13 @@ class ServicesRecyclerViewAdapter(private var list: List<ServiceItem>? = emptyLi
 
     class ViewHolder(val binding: ServiceItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: ServiceItem){
+        fun bind(item: ServiceItem) {
             binding.item = item
             binding.invalidateAll()
         }
     }
 
-    fun changeData(list:List<ServiceItem>){
+    fun changeData(list: List<ServiceItem>) {
         this.list = list
         notifyDataSetChanged()
     }

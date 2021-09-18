@@ -5,7 +5,7 @@ import com.polotika.brokerage.pojo.models.User
 
 class RegisterUseCase(private val repository: LoginRepository) {
 
-    fun execute(user: User):Event{
+    fun execute(user: User): Event {
         return repository.registerUser(user)
     }
 }

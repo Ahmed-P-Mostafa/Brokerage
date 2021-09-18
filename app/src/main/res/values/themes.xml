@@ -1,4 +1,4 @@
-    <resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Brokerage" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -14,12 +14,12 @@
         <!-- Customize your theme here. -->
     </style>
 
-        <style name="Theme.Brokerage.NoActionBar">
-            <item name="windowActionBar">false</item>
-            <item name="windowNoTitle">true</item>
-        </style>
+    <style name="Theme.Brokerage.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
-        <style name="Theme.DrawerApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.DrawerApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-        <style name="Theme.DrawerApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.DrawerApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

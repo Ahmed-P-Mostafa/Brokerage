@@ -1,8 +1,6 @@
 package com.polotika.brokerage.di
 
 import android.content.Context
-import com.polotika.brokerage.pojo.repository.login.ForgetUseCase
-import com.polotika.brokerage.pojo.repository.login.LoginRepository
 import com.polotika.brokerage.webService.WebService
 import dagger.Module
 import dagger.Provides
@@ -18,7 +16,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideWebService(@ApplicationContext context: Context):WebService{
+    fun provideWebService(@ApplicationContext context: Context): WebService {
         return WebService(context)
     }
 

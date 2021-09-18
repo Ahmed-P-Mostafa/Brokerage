@@ -10,16 +10,17 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ServicesViewModel @Inject constructor(private val userCase: ServicesListUseCase) :BaseViewModel<BaseNavigator>() {
+class ServicesViewModel @Inject constructor(private val userCase: ServicesListUseCase) :
+    BaseViewModel<BaseNavigator>() {
 
     private val TAG = "ServicesViewModel"
     var savedInstanceState: Boolean = true
     val servicesList = MutableLiveData<List<ServiceItem>>()
 
 
-    fun getServicesList(){
+    fun getServicesList() {
         Log.d(TAG, "getServicesList: ")
         savedInstanceState = false
-        servicesList.value =  userCase.execute()
+        servicesList.value = userCase.execute()
     }
 }

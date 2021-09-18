@@ -4,7 +4,7 @@ import com.polotika.brokerage.pojo.models.Event
 import com.polotika.brokerage.pojo.models.User
 
 interface LoginRepository {
-    fun logUserIn(email:String,password:String):Event
-    fun registerUser(user: User):Event
-    fun forgetPassword(email: String):Event
+    fun logUserIn(email: String, password: String): Event
+    fun registerUser(user: User): Event
+    fun forgetPassword(email: String): Event
 }

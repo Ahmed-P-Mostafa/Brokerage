@@ -15,23 +15,24 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 
-abstract class BaseFragment<DB:ViewDataBinding,VM:BaseViewModel<*>>:Fragment() {
-    lateinit var binding:DB
-    lateinit var viewModel:VM
-    private var loader: ProgressDialog?=null
+abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel<*>> : Fragment() {
+    lateinit var binding: DB
+    lateinit var viewModel: VM
+    private var loader: ProgressDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,initializeLayout(),container,false)
+        binding = DataBindingUtil.inflate(inflater, initializeLayout(), container, false)
         viewModel = ViewModelProvider(requireActivity()).get(initializeViewModel())
         return binding.root
     }
-    abstract fun initializeLayout():Int
 
-    abstract fun initializeViewModel():Class<VM>
+    abstract fun initializeLayout(): Int
+
+    abstract fun initializeViewModel(): Class<VM>
 
 
     fun showMessage(message: String) {
@@ -46,7 +47,7 @@ abstract class BaseFragment<DB:ViewDataBinding,VM:BaseViewModel<*>>:Fragment() {
         message: String,
         posBtnText: String,
         posBtnClickListener: DialogInterface.OnClickListener,
-        negBtnText:String
+        negBtnText: String
     ) {
         AlertDialog.Builder(requireContext())
             .setTitle(title)
@@ -74,9 +75,10 @@ abstract class BaseFragment<DB:ViewDataBinding,VM:BaseViewModel<*>>:Fragment() {
         }
     }
 
-    fun isInternetAvailable():Boolean{
+    fun isInternetAvailable(): Boolean {
 
-        val cm = requireActivity().getSystemService(AppCompatActivity.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val cm =
+            requireActivity().getSystemService(AppCompatActivity.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
         return activeNetwork?.isConnectedOrConnecting == true
     }

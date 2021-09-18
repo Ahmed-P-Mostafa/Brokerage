@@ -4,11 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.lifecycle.Observer
+import com.polotika.brokerage.LoginActivity
 import com.polotika.brokerage.MainActivity
 import com.polotika.brokerage.R
 import com.polotika.brokerage.base.BaseActivity
 import com.polotika.brokerage.databinding.ActivitySplashBinding
-import com.polotika.brokerage.LoginActivity
 import com.polotika.brokerage.ui.noInternet.NoInternetActivity
 import com.polotika.brokerage.ui.onBoard.OnBoardingActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,13 +22,13 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
         viewModel.splashNavigationEvent.observe(this, { event ->
             Handler().postDelayed(Runnable {
                 val mIntent = getAppropriateIntent(event)
-                when(isInternetAvailable()){
+                when (isInternetAvailable()) {
                     true -> launchActivity(mIntent)
                     false -> {
-                        if (event==SplashNavigationEvent.HomeEvent){
+                        if (event == SplashNavigationEvent.HomeEvent) {
                             val intent = Intent(this, NoInternetActivity::class.java)
                             launchActivity(intent)
-                        }else{
+                        } else {
                             launchActivity(mIntent)
                         }
 

@@ -10,7 +10,6 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -19,7 +18,7 @@ import com.polotika.brokerage.pojo.models.ServiceItem
 
 
 @BindingAdapter("setImage")
-fun setSrcImage(iv:ImageView,src:Int){
+fun setSrcImage(iv: ImageView, src: Int) {
     iv.setImageResource(src)
 }
 
@@ -36,9 +35,9 @@ fun TabLayout.setViewPager(viewPager: ViewPager2) {
 
 
 @BindingAdapter("goToRegister")
-fun goToRegister(textView: TextView, value:Boolean){
-    when(value){
-        true->{
+fun goToRegister(textView: TextView, value: Boolean) {
+    when (value) {
+        true -> {
             textView.setOnClickListener {
                 it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
             }
@@ -47,16 +46,17 @@ fun goToRegister(textView: TextView, value:Boolean){
 }
 
 @BindingAdapter("serviceDetails")
-fun serviceDetails(layout:ConstraintLayout,item:ServiceItem){
+fun serviceDetails(layout: ConstraintLayout, item: ServiceItem) {
     layout.setOnClickListener {
         Toast.makeText(layout.context, item.name, Toast.LENGTH_SHORT).show()
     }
 
 }
+
 @BindingAdapter("goToForgetPassword")
-fun goToForgerPassword(textView: TextView, value:Boolean){
-    when(value){
-        true->{
+fun goToForgerPassword(textView: TextView, value: Boolean) {
+    when (value) {
+        true -> {
             textView.setOnClickListener {
                 it.findNavController().navigate(R.id.action_loginFragment_to_forgetPasswordFragment)
             }

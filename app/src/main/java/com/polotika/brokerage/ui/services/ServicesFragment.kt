@@ -2,10 +2,7 @@ package com.polotika.brokerage.ui.services
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.polotika.brokerage.R
@@ -17,7 +14,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ServicesFragment : BaseFragment<FragmentServicesBinding,ServicesViewModel>() {
+class ServicesFragment : BaseFragment<FragmentServicesBinding, ServicesViewModel>() {
 
     private val TAG = "ServicesFragment"
     private val STATE_KEY = "STATE"
@@ -49,7 +46,7 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding,ServicesViewModel>
         outState.putBoolean(STATE_KEY, true)
     }
 
-    override fun initializeLayout()= R.layout.fragment_services
+    override fun initializeLayout() = R.layout.fragment_services
 
-    override fun initializeViewModel()= ServicesViewModel::class.java
+    override fun initializeViewModel() = ServicesViewModel::class.java
 }

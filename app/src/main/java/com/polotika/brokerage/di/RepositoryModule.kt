@@ -19,13 +19,13 @@ class RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideLoginUseCase(repository: LoginRepository):LoginUseCase{
+    fun provideLoginUseCase(repository: LoginRepository): LoginUseCase {
         return LoginUseCase(repository)
     }
 
     @Singleton
     @Provides
-    fun provideLoginRepository(webService: WebService):LoginRepository{
+    fun provideLoginRepository(webService: WebService): LoginRepository {
         return LoginRepositoryImpl(webService)
     }
 
@@ -37,13 +37,13 @@ class RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideMainRepository(@ApplicationContext context: Context):MainRepository{
+    fun provideMainRepository(@ApplicationContext context: Context): MainRepository {
         return MainRepositoryImpl(context)
     }
 
     @Singleton
     @Provides
-    fun provideServicesListUseCase(mainRepository: MainRepository):ServicesListUseCase{
+    fun provideServicesListUseCase(mainRepository: MainRepository): ServicesListUseCase {
         return ServicesListUseCase(mainRepository)
     }
 
