@@ -12,22 +12,22 @@
         tools:layout="@layout/fragment_services" />
     <fragment
         android:id="@+id/renewalFragment"
-        android:name="com.polotika.brokerage.RenewalFragment"
+        android:name="com.polotika.brokerage.ui.RenewalFragment"
         android:label="@string/renewal"
         tools:layout="@layout/fragment_renewal" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.polotika.brokerage.HomeFragment"
+        android:name="com.polotika.brokerage.ui.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/claimsFragment"
-        android:name="com.polotika.brokerage.ClaimsFragment"
+        android:name="com.polotika.brokerage.ui.ClaimsFragment"
         android:label="@string/claims"
         tools:layout="@layout/fragment_claims" />
     <fragment
         android:id="@+id/medicalFragment"
-        android:name="com.polotika.brokerage.MedicalFragment"
+        android:name="com.polotika.brokerage.ui.MedicalFragment"
         android:label="@string/medical"
         tools:layout="@layout/fragment_medical" />
 </navigation>

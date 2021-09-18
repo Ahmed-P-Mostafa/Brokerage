@@ -10,6 +10,7 @@ import com.polotika.brokerage.pojo.repository.login.ForgetUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,21 +18,16 @@ import javax.inject.Inject
 class ForgetPasswordViewModel @Inject constructor(private val useCase: ForgetUseCase) :
     BaseViewModel<BaseNavigator>() {
 
-    private val TAG = "ForgetPasswordViewModel"
-    val requestResult = MutableLiveData<Event>()
     val email = MutableLiveData<String>()
 
-    fun sendRequest(email: String) {
-        Log.d(TAG, "sendRequest: ")
+    fun sendRequest(email: String):Boolean {
+        this@ForgetPasswordViewModel.email.value = ""
+
+        var result :Boolean = false
         viewModelScope.launch {
-            val result: Deferred<Event> = async {
-                useCase.execute(email)
-
-            }
-            requestResult.value = result.await()
-            result.cancel()
+                result =  useCase.execute(email)
         }
-
+        return result
     }
 
 }

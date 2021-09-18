@@ -4,7 +4,16 @@ import com.polotika.brokerage.pojo.models.Event
 
 
 class ForgetUseCase(private val repository: LoginRepository) {
-    fun execute(email:String): Event{
-        return repository.forgetPassword(email)
+    fun execute(email: String): Boolean {
+        return when (repository.forgetPassword(email)) {
+            Event.Failed -> {
+                false
+            }
+            Event.Success -> true
+            else -> {
+                false
+            }
+
+        }
     }
 }
