@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -67,12 +68,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun about(item: MenuItem) {
-        binding.drawerLayout.closeDrawer(Gravity.LEFT)
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         Toast.makeText(this, getString(R.string.about), Toast.LENGTH_SHORT).show()
     }
 
     fun settings(item: MenuItem) {
-        binding.drawerLayout.closeDrawer(Gravity.LEFT)
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
 
         Toast.makeText(this, getString(R.string.setting), Toast.LENGTH_SHORT).show()
 
